@@ -1,0 +1,83 @@
+﻿@using System.Globalization;
+@model IEnumerable<WebPedido.Models.Cliente>
+
+
+@{
+    ViewData["Title"] = "Listagem Cliente";
+}
+
+
+<h2>Listagem de Clientes</h2>
+<br />
+<p>
+    <a asp-action="Criar">Novo Cliente</a>
+</p>
+<br />
+
+<div class="consultas d-flex bd-highlight">
+
+
+    <form method="post" asp-action="PesquisaNome">
+        <div class="form-group pesquisar d-flex">
+            <div class="campo">
+                <input id="nome" name="nome" class="form-control" placeholder="Digite o Nome">
+            </div>
+            <button type="submit" class="campo btn btn-primary ">Pesquisar</button>
+        </div>
+    </form>
+
+
+</div>
+
+
+
+<div class="">
+    <table class="tabela-contato shadow tela-contato">
+        <thead>
+            <tr class="cabecario">
+                <th class="linha-cabecario">
+                    ID
+                </th>
+                <th>
+                    NOME
+                </th>
+                <th>
+                    ENDEREÇO
+                </th>
+                <th>
+                    TELEFONE
+                </th>
+                <th>
+                    OPÇÕES
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+
+            {
+
+                <tr>
+                    <td class="linha-cabecario">
+                        @Html.DisplayFor(model => item.ID)
+                    </td>
+                    <td class="linha-cabecario">
+                        @Html.DisplayFor(model => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Endereco)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Telefone)
+                    </td>
+
+                    <td class="selecao-icon">
+                        <a asp-action="Editar" asp-route-id="@item.ID">  <i class="fa fa-pencil"></i></a>
+                        <a asp-action="Detalhes" asp-route-id="@item.ID"><i class="fa fa-eye"></i></a>
+                        <a asp-action="Excluir" asp-route-id="@item.ID"> <i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

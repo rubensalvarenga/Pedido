@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WebPedido.props" />
+</Project>

@@ -1,0 +1,52 @@
+﻿@model List<WebPedido.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Pesquisa Cliente";
+}
+<br />
+
+<h2>Filtro por Nome Cliente</h2>
+<br />
+
+
+<div class="pesquisa">
+    <table class="tabela-contato shadow tela-contato ">
+        <thead>
+            <tr class="cabecario">
+                <th class="linha-cabecario">ID</th>
+                <th>NOME</th>
+                <th>ENDEREÇO</th>
+                <th>TELEFONE</th>
+       
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="linha-cabecario">
+                        @Html.DisplayFor(model => item.ID)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => item.Nome)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => item.Endereco)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => item.Telefone)
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+    <br />
+    <a asp-action="Index">Voltar</a>
+</div>
