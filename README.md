@@ -8,3 +8,4 @@
 <h3>Instale os pacotes</h3>
 <p><b></b>microsoft.EntityFrameworkCore.SqlServer</b></p>
 <p><b></b>microsoft.EntityFrameworkCore.Design</b></p>
+<h4>Etapas Concluida : Cliente, Produto, listagem e visualização dos pedidos.</h4>
